@@ -1,0 +1,68 @@
+INSERT INTO Cliente VALUES (1, 'Juan', 'Pérez', 'Gómez', 'juanperez@gmail.com', '3001234567');
+INSERT INTO Empleado VALUES (1, 'Laura', 'Martinez', 'Recepcionista', 2000.00);
+INSERT INTO Habitacion VALUES (101, 'Doble', 150.00, 'Disponible');
+INSERT INTO Servicio VALUES (1, 'Desayuno', 'Buffet de desayuno', 15.00);
+INSERT INTO Reserva VALUES (1, 1, 101, '2025-06-01', '2025-06-05', 'Activa');
+INSERT INTO Factura VALUES (1, 1, '2025-06-05', 600.00);
+INSERT INTO reserva_servicios VALUES (1, 1, 4);
+-- CLIENTES
+-- ===========================
+INSERT INTO Cliente VALUES (2, 'María', 'González', 'López', 'maria.gonzalez@gmail.com', '3002345678');
+INSERT INTO Cliente VALUES (3, 'Carlos', 'Ramírez', 'Torres', 'carlos.ramirez@hotmail.com', '3013456789');
+INSERT INTO Cliente VALUES (4, 'Ana', 'Martínez', 'Ruiz', 'ana.martinez@yahoo.com', '3024567890');
+INSERT INTO Cliente VALUES (5, 'Luis', 'Fernández', 'Díaz', 'luis.fernandez@gmail.com', '3035678901');
+INSERT INTO Cliente VALUES (6, 'Elena', 'Castro', 'Morales', 'elena.castro@gmail.com', '3046789012');
+
+-- ===========================
+-- EMPLEADOS
+-- ===========================
+INSERT INTO Empleado VALUES (2, 'Pedro', 'Suárez', 'Administrador', 3500.00);
+INSERT INTO Empleado VALUES (3, 'Lucía', 'Vargas', 'Cocinera', 2200.00);
+INSERT INTO Empleado VALUES (4, 'Andrés', 'Gómez', 'Botones', 1500.00);
+INSERT INTO Empleado VALUES (5, 'Diana', 'Herrera', 'Recepcionista', 2000.00);
+INSERT INTO Empleado VALUES (6, 'Miguel', 'Rojas', 'Gerente', 5000.00);
+
+-- ===========================
+-- HABITACIONES
+-- ===========================
+INSERT INTO Habitacion VALUES (102, 'Sencilla', 100.00, 'Disponible');
+INSERT INTO Habitacion VALUES (103, 'Suite', 300.00, 'Ocupada');
+INSERT INTO Habitacion VALUES (104, 'Doble', 150.00, 'Ocupada');
+INSERT INTO Habitacion VALUES (105, 'Suite Presidencial', 500.00, 'Disponible');
+INSERT INTO Habitacion VALUES (106, 'Sencilla', 90.00, 'Disponible');
+
+-- ===========================
+-- SERVICIOS
+-- ===========================
+INSERT INTO Servicio VALUES (2, 'Spa', 'Sesión de spa y masajes', 50.00);
+INSERT INTO Servicio VALUES (3, 'Transporte', 'Transporte al aeropuerto', 30.00);
+INSERT INTO Servicio VALUES (4, 'Cena', 'Cena gourmet en el restaurante', 40.00);
+INSERT INTO Servicio VALUES (5, 'Lavandería', 'Servicio de lavado de ropa', 20.00);
+INSERT INTO Servicio VALUES (6, 'Gimnasio', 'Acceso al gimnasio del hotel', 10.00);
+
+-- ===========================
+-- RESERVAS
+-- ===========================
+INSERT INTO Reserva VALUES (2, 2, 102, '2025-06-10', '2025-06-12', 'Activa');
+INSERT INTO Reserva VALUES (3, 3, 103, '2025-07-01', '2025-07-07', 'Finalizada');
+INSERT INTO Reserva VALUES (4, 4, 104, '2025-07-15', '2025-07-20', 'Activa');
+INSERT INTO Reserva VALUES (5, 5, 105, '2025-08-01', '2025-08-10', 'Cancelada');
+INSERT INTO Reserva VALUES (6, 6, 106, '2025-08-15', '2025-08-18', 'Activa');
+
+-- ===========================
+-- FACTURAS
+-- ===========================
+INSERT INTO Factura VALUES (2, 2, '2025-06-12', 200.00);
+INSERT INTO Factura VALUES (3, 3, '2025-07-07', 2100.00);
+INSERT INTO Factura VALUES (4, 4, '2025-07-20', 750.00);
+INSERT INTO Factura VALUES (5, 5, '2025-08-01', 0.00);  -- cancelada
+INSERT INTO Factura VALUES (6, 6, '2025-08-18', 270.00);
+
+-- ===========================
+-- RESERVA_SERVICIOS
+-- ===========================
+INSERT INTO reserva_servicios VALUES (2, 2, 1);  -- Reserva 2 con Spa
+INSERT INTO reserva_servicios VALUES (3, 3, 2);  -- Reserva 3 con Transporte
+INSERT INTO reserva_servicios VALUES (4, 4, 3);  -- Reserva 4 con Cena
+INSERT INTO reserva_servicios VALUES (5, 5, 5);  -- Reserva 5 con Lavandería
+INSERT INTO reserva_servicios VALUES (6, 6, 6);  -- Reserva 6 con Gimnasio

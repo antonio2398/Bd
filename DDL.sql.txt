@@ -1,0 +1,58 @@
+CREATE TABLE Cliente (
+    ID_CLIENTE INT PRIMARY KEY,
+    Nombre VARCHAR(50),
+    primer_apellido VARCHAR(50),
+    segundo_apellido VARCHAR(50),
+    email VARCHAR(100),
+    telefono VARCHAR(20)
+);
+
+CREATE TABLE Empleado (
+    ID_EMPLEADO INT PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    cargo VARCHAR(50),
+    salario DECIMAL(10,2)
+);
+
+CREATE TABLE Habitacion (
+    ID_HABITACION INT PRIMARY KEY,
+    tipo VARCHAR(50),
+    precio DECIMAL(10,2),
+    estado VARCHAR(20)
+);
+
+CREATE TABLE Servicio (
+    ID_SERVICIO INT PRIMARY KEY,
+    nombre VARCHAR(50),
+    descripcion TEXT,
+    precio DECIMAL(10,2)
+);
+
+CREATE TABLE Reserva (
+    ID_RESERVA INT PRIMARY KEY,
+    ID_CLIENTE INT,
+    ID_HABITACION INT,
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    estado VARCHAR(20),
+    FOREIGN KEY (ID_CLIENTE) REFERENCES Cliente(ID_CLIENTE),
+    FOREIGN KEY (ID_HABITACION) REFERENCES Habitacion(ID_HABITACION)
+);
+
+CREATE TABLE Factura (
+    ID_FACTURA INT PRIMARY KEY,
+    ID_RESERVA INT,
+    fecha DATE,
+    total DECIMAL(10,2),
+    FOREIGN KEY (ID_RESERVA) REFERENCES Reserva(ID_RESERVA)
+);
+
+CREATE TABLE reserva_servicios (
+    ID_RESERVA INT,
+    ID_SERVICIO INT,
+    cantidad INT,
+    PRIMARY KEY (ID_RESERVA, ID_SERVICIO),
+    FOREIGN KEY (ID_RESERVA) REFERENCES Reserva(ID_RESERVA),
+    FOREIGN KEY (ID_SERVICIO) REFERENCES Servicio(ID_SERVICIO)
+);
